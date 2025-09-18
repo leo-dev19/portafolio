@@ -20,7 +20,7 @@ const Inicio = () => (
         className="w-60 h-41 rounded-full border-4 border-cyan-500 mx-auto mb-4 object-cover shadow-lg"
       />
       <h1 className="text-3xl font-bold">Leonardo Gregory Chávez Simbron</h1>
-      <p className="text-sm text-gray-300 mt-2">Estudiante de Computación e Informática - Backend & Web Developer</p>
+      <p className="text-sm text-gray-300 mt-2">Estudiante de Computación e Informática - FontEnd & Web Developer</p>
 
       <div className="flex justify-center gap-4 mt-6 text-2xl text-cyan-400">
         <a href="https://github.com/leo-dev19" target="_blank" rel="noopener noreferrer">
