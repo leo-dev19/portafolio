@@ -1,6 +1,6 @@
 import React from 'react';
 import fondo from '../assets/fondo.gif';
-import leonardoImg from '../assets/leonardo.jpeg'; // asegúrate que esté en assets
+import leonardoImg from '../assets/ftPROF.png'; // asegúrate que esté en assets
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Inicio = () => (
@@ -17,7 +17,7 @@ const Inicio = () => (
       <img
         src={leonardoImg}
         alt="Leonardo"
-        className="w-36 h-36 rounded-full border-4 border-cyan-500 mx-auto mb-4 object-cover shadow-lg"
+        className="w-60 h-41 rounded-full border-4 border-cyan-500 mx-auto mb-4 object-cover shadow-lg"
       />
       <h1 className="text-3xl font-bold">Leonardo Gregory Chávez Simbron</h1>
       <p className="text-sm text-gray-300 mt-2">Estudiante de Computación e Informática - Backend & Web Developer</p>

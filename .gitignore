@@ -1,0 +1,13 @@
+# dependencias
+node_modules/
+
+# build
+dist/
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# cache
+*.log
+.cache/
