@@ -64,12 +64,12 @@ const Experiencia = () => {
       ],
       imagenes: [
         {
-          src: "/images/login.jpeg",
+          src: `${import.meta.env.BASE_URL}images/login.jpeg`,
           alt: "Pantalla de inicio de sesión del sistema Logistiflex",
           caption: "Pantalla de inicio de sesión del sistema"
         },
         {
-          src: "/images/asist.jpeg",
+          src: `${import.meta.env.BASE_URL}images/asist.jpeg`,
           alt: "Módulo de aprobación de asistencias en Logistiflex",
           caption: "Módulo de aprobación de asistencias"
         }
@@ -82,7 +82,9 @@ const Experiencia = () => {
       id="experiencia"
       className="py-20 px-8 bg-gradient-to-b from-teal-900 to-cyan-950 text-white"
     >
-      <h2 className="text-5xl font-extrabold mb-8 text-center">Experiencia laboral</h2>
+      <h2 className="text-5xl font-extrabold mb-8 text-center">
+        Experiencia laboral
+      </h2>
 
       <div className="max-w-6xl mx-auto">
         {Object.entries(experiencias).map(([puesto, info]) => (
