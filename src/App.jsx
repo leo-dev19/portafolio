@@ -26,11 +26,6 @@ function App() {
             
             {/* Logo y Nombre */}
             <a href="#inicio" className="flex items-center gap-3 group">
-              <img 
-                src="/images/favicon3.png" 
-                alt="Logo Leonardo" 
-                className="w-8 h-8 md:w-10 md:h-10 object-contain" 
-              />
               <span className="text-lg md:text-2xl font-extrabold tracking-tight text-cyan-400 transition-colors">
                 Leonardo Chavez
               </span>
