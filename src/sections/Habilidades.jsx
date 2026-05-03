@@ -1,11 +1,12 @@
 import React from 'react';
 
 const habilidades = {
-  Lenguajes: ['Java', 'C#', 'JavaScript'],
+  Lenguajes: ['Java', 'C#', 'JavaScript', 'Python'],
   Frameworks: ['Spring Boot', 'React', 'ASP.NET Core'],
-  BaseDatos: ['MySQL', 'SQL Server'],
-  Herramientas: ['Git', 'Docker', 'Swagger'],
+  BaseDatos: ['MySQL', 'SQL Server', 'MongoDB', 'PostgreSQL'],
+  Herramientas: ['Git', 'Docker', 'Swagger', 'Postman', 'Visual Studio Code', 'IntelliJ IDEA'],
   Diseño: ['TailwindCSS', 'Bootstrap', 'HTML', 'CSS'],
+  TestingQA: ['JUnit', 'JMeter', 'Selenium', 'Mockito']
 };
 
 const Habilidades = () => (
