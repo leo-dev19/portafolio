@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaTimes } from 'react-icons/fa';
 
 const Experiencia = () => {
   const [imagenActiva, setImagenActiva] = useState(null);
@@ -29,64 +30,119 @@ const Experiencia = () => {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, margin: "-100px" }}
-      id="experiencia"
-      className="py-24 px-6 md:px-10 bg-slate-950 text-white"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Experiencia Laboral</h2>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
-            Construcción de soluciones empresariales con enfoque en escalabilidad, calidad de software y mejora de procesos.
-          </p>
-        </div>
+    <>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        id="experiencia"
+        className="py-24 px-6 md:px-10 bg-slate-950 text-white"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Experiencia Laboral</h2>
+            <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+              Construcción de soluciones empresariales con enfoque en escalabilidad, calidad de software y mejora de procesos.
+            </p>
+          </div>
 
-        {Object.entries(experiencias).map(([puesto, info]) => (
-          <motion.div
-            key={puesto}
-            whileHover={{ y: -5 }}
-            className="mb-10 bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 shadow-xl hover:border-cyan-400/30 transition-all duration-300"
-          >
-            <h3 className="text-2xl md:text-3xl font-bold text-white">{puesto}</h3>
-            <p className="text-cyan-400 mt-2 text-lg font-medium">{info.empresa} - {info.periodo}</p>
-            <p className="mt-4 text-gray-200 leading-relaxed text-lg">{info.descripcion}</p>
+          {Object.entries(experiencias).map(([puesto, info]) => (
+            <motion.div
+              key={puesto}
+              whileHover={{ y: -5 }}
+              className="mb-10 bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 shadow-xl hover:border-cyan-400/30 transition-all duration-300"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-white">{puesto}</h3>
+              <p className="text-cyan-400 mt-2 text-lg font-medium">{info.empresa} - {info.periodo}</p>
+              <p className="mt-4 text-gray-200 leading-relaxed text-lg">{info.descripcion}</p>
 
-            <div className="mt-6">
-              <h4 className="text-xs uppercase tracking-widest text-cyan-300 mb-3 font-bold">Stack tecnológico</h4>
-              <div className="flex flex-wrap gap-2">
-                {info.stack.map(tech => (
-                  <span key={tech} className="px-3 py-1 text-sm rounded-full bg-slate-900 border border-white/10 text-cyan-200">
-                    {tech}
-                  </span>
+              <div className="mt-6">
+                <h4 className="text-xs uppercase tracking-widest text-cyan-300 mb-3 font-bold">Stack tecnológico</h4>
+                <div className="flex flex-wrap gap-2">
+                  {info.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-sm rounded-full bg-slate-900 border border-white/10 text-cyan-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {info.detalles.map((d, i) => (
+                  <div key={i} className="bg-slate-900/50 border border-white/5 rounded-2xl p-4">
+                    <h5 className="text-white font-semibold mb-1">{d.titulo}</h5>
+                    <p className="text-gray-400 text-sm leading-relaxed">{d.texto}</p>
+                  </div>
                 ))}
               </div>
-            </div>
 
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {info.detalles.map((d, i) => (
-                <div key={i} className="bg-slate-900/50 border border-white/5 rounded-2xl p-4">
-                  <h5 className="text-white font-semibold mb-1">{d.titulo}</h5>
-                  <p className="text-gray-400 text-sm leading-relaxed">{d.texto}</p>
-                </div>
-              ))}
-            </div>
-            
-            {/* Imágenes con hover suave */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {info.imagenes.map((img, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.02 }} className="bg-slate-900/50 p-2 rounded-2xl border border-white/5">
-                  <img src={img.src} alt={img.alt} className="w-full h-64 object-cover rounded-xl cursor-pointer" onClick={() => setImagenActiva(img)} />
-                </motion.div>
-              ))}
-            </div>
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {info.imagenes.map((img, i) => (
+                  <motion.button
+                    key={i}
+                    type="button"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setImagenActiva(img)}
+                    className="bg-slate-900/50 p-2 rounded-2xl border border-white/5 overflow-hidden text-left cursor-pointer"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-64 object-cover rounded-xl"
+                    />
+                    <p className="text-sm text-gray-300 mt-3 px-1">{img.caption}</p>
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      <AnimatePresence>
+        {imagenActiva && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setImagenActiva(null)}
+          >
+            <motion.div
+              className="relative max-w-5xl w-full bg-slate-900 border border-white/10 rounded-3xl p-4 md:p-6"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: 'spring', damping: 20, stiffness: 120 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setImagenActiva(null)}
+                className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full"
+              >
+                <FaTimes />
+              </button>
+
+              <img
+                src={imagenActiva.src}
+                alt={imagenActiva.alt}
+                className="w-full max-h-[75vh] object-contain rounded-2xl"
+              />
+
+              <p className="text-center text-gray-300 mt-4 text-sm md:text-base">
+                {imagenActiva.caption}
+              </p>
+            </motion.div>
           </motion.div>
-        ))}
-      </div>
-    </motion.section>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
