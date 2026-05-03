@@ -42,8 +42,8 @@ const Inicio = () => (
       </div>
 
       <a
-        href={`${import.meta.env.BASE_URL}CV_Leonardo_Chavez_Simbron.pdf`}
-        download="CV_Leonardo_Chavez_Simbron.pdf"
+        href={`${import.meta.env.BASE_URL}cv Leonardo Chavez.pdf`}
+        download="cv Leonardo Chavez.pdf"
         className="mt-6 inline-block bg-cyan-600 px-6 py-2 rounded hover:bg-cyan-700 transition text-white"
       >
         Descargar CV
