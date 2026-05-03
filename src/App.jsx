@@ -34,7 +34,7 @@ function App() {
               <span className="text-lg md:text-2xl font-extrabold tracking-tight text-cyan-400 transition-colors">
                 Leonardo Chavez
               </span>
-            </a>
+            </a> 
 
             {/* Desktop menu */}
             <div className="hidden md:flex items-center gap-8">
