@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Asegúrate de tener framer-motion instalado
-import leonardoImg from '../assets/ftPROF.png';
+import leonardoImg from '../assets/ftPtf.png';
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -28,7 +28,7 @@ const Inicio = () => {
           <img
             src={leonardoImg}
             alt="Leonardo"
-            className="relative w-full h-full rounded-full border-4 border-slate-800 shadow-2xl object-cover object-top"
+            className="relative w-full h-full rounded-full border-5 border-slate-800 shadow-2xl object-cover"
           />
         </motion.div>
 
